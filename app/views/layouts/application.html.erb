@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>dropbox-api Rails example</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+    <div class="container">
+      <%= render :partial => 'partials/flash' %>
+      <%= yield %>
+    </div>
+
+  </body>
+</html>

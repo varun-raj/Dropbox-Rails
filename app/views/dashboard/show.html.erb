@@ -1,0 +1,16 @@
+<h1>Photo viewer</h1>
+
+<div class="photos">
+  <% if @files.empty? %>
+    No photos
+  <% else %>
+    <% @files.each do |file| %>
+      <% if file['is_dir'] %>
+      Folder = <%= link_to "#{file['path'].split('/')[-1]}","/?folder=#{file['path']}" %><br>
+      <% else %>
+      File = <%= link_to "#{file['path'].split('/')[-1]}","/download?file=#{file['path']}", method: :post , :remote => true %><br>
+
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
