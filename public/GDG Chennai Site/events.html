@@ -1,0 +1,81 @@
+<html ng-app>
+   <head >
+  <title>Google Developers Group Chennai</title>
+      <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/waves.css">
+      <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+   </head>
+   <body style="background:#fff;">
+      <nav class="navbar navbar-default" role="navigation">
+         <div class="container-fluid">
+            <div class="container">
+               <!-- Brand and toggle get grouped for better mobile display -->
+               <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">Google Developer Group Chennai</a>
+               </div>
+               <!-- Collect the nav links, forms, and other content for toggling -->
+               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">
+               <li><a class=" waves-effect waves-button" href="index.html" class="waves-effect waves-button">Home</a></li>
+        <li><a href="about.html" class="waves-effect waves-button">About</a></li>
+        <li><a href="events.html" class="waves-effect waves-button active">Events</a></li>
+        <li><a href="subscribe.html" class="waves-effect waves-button">Subscribe</a></li>
+         <li><a href="contact.html" class="waves-effect waves-button">Contact Us</a></li>
+                  </ul>
+               </div>
+               <!-- /.navbar-collapse -->
+            </div>
+         </div>
+         <!-- /.container-fluid -->
+      </nav>
+      <div class="content-page">
+         <div class="events-page-header waves-effect waves-light waves-block">
+            <h3>We Have Great Events</h3>
+         </div>
+         <div class="col-md-10 col-md-offset-1 events-list" ng-controller="eventsList">
+
+
+             <div class="col-md-12">
+           
+  <div ng-repeat="event in eventsList" ng-class="{'col-sm-6 event-block' : $index<=3, 'col-sm-3 event-block' : $index>3}">
+          <div  class="event-header">
+            <span class="waves-effect">
+                     <img ng-src="{{event.Image}}">
+                   </span>
+                  </div>
+                  <div class="event-body">
+
+                     <h1><a href="{{event.Link}}">{{event.Name}}</a></h1>
+                     <p>{{event.Date}}</p>
+                  </div>
+</div>
+
+             </div>
+
+
+          </div>
+
+         
+         </div>
+
+<div class="footer">
+
+<p>Crafted with <span>&hearts;</span> by <a href="http://www.skcript.com">Skcript</a></p>
+</div>
+   </body>
+   <script type="text/javascript" src="assets/js/jquery.js"></script>
+   <script type="text/javascript" src="assets/js/waves.js"></script>
+
+   <script type="text/javascript">
+     Waves.displayEffect();
+    </script>
+   <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+<script type="text/javascript" src="assets/js/angular.min.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+</html>

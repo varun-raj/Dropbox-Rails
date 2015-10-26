@@ -6,7 +6,9 @@
   <% else %>
     <% @files.each do |file| %>
       <% if file['is_dir'] %>
-      Folder = <%= link_to "#{file['path'].split('/')[-1]}","/?folder=#{file['path']}" %><br>
+      Folder = <%= link_to "#{file['path'].split('/')[-1]}","/?folder=#{file['path']}" %>
+      <%= link_to "Download", folder_download_path(file['path']) %>
+      <br>
       <% else %>
       File = <%= link_to "#{file['path'].split('/')[-1]}","/download?file=#{file['path']}", method: :post , :remote => true %><br>
 
