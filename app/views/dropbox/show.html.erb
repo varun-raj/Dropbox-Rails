@@ -1,0 +1,25 @@
+<h1><%= @foldername %></h1>
+
+ <%= link_to "Import", folder_download_path(@foldername), class: "" %>
+<div class="photos">
+  <% if @files.empty? %>
+    No photos
+  <% else %>
+  <ul class="list-group">
+
+    <% @files.each do |file| %>
+      <% if file['is_dir'] %>
+       <li class="list-group-item">
+       <%= link_to "#{file['path'].split('/')[-1]}","/?folder=#{file['path']}" %>
+     
+      </li>
+      <% else %>
+      <li class="list-group-item">
+      <%= file['path'].split('/')[-1] %>
+      <%= link_to "Import", "/download?file=#{file['path']}", method: :post , class: "btn btn-xs btn-success", :remote => true %> 
+      </li>
+      <% end %>
+    <% end %>
+  <% end %>
+</ul>
+</div>
